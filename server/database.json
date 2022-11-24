@@ -1,0 +1,79 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "name": "Rustic Cotton Pizza",
+            "description": "Rustic Cotton Pizza and friends",
+            "category_id": 1,
+            "category": "scifi",
+            "subcategory": "novel"
+        },
+        {
+            "id": 2,
+            "name": "Licensed Cotton Tuna",
+            "description": "Licensed Cotton Tuna and adventures",
+            "category": "fantasy",
+            "subcategory": "novel"
+        },
+        {
+            "id": 3,
+            "name": "Fantastic Wooden Sausages",
+            "description": "Fantastic Wooden Sausages and friends",
+            "category_id": 1,
+            "category": "scifi",
+            "subcategory": "story"
+        },
+        {
+            "id": 4,
+            "name": "Refined Cotton Cheese",
+            "description": "Refined Cotton Cheese and something something",
+            "category": "fantasy",
+            "subcategory": "story"
+        },
+        {
+            "id": 5,
+            "name": "Awesome Plastic Chair",
+            "description": "Awesome Plastic Chair and something something",
+            "category_id": 1,
+            "category": "scifi",
+            "subcategory": "poem"
+        },
+        {
+            "id": 6,
+            "name": "Refined Concrete Ball",
+            "description": "Refined Concrete Ball and adventures",
+            "category": "fantasy",
+            "subcategory": "poem"
+        },
+        {
+            "id": 7,
+            "name": "Intelligent Frozen Table",
+            "description": "Intelligent Frozen Table and family",
+            "category_id": 1,
+            "category": "scifi",
+            "subcategory": "short story"
+        },
+        {
+            "id": 8,
+            "name": "Rustic Rubber Chair",
+            "description": "Rustic Rubber Chair and story",
+            "category": "fantasy",
+            "subcategory": "short story"
+        },
+        {
+            "id": 9,
+            "name": "Practical Steel Keyboard",
+            "description": "Practical Steel Keyboard and something",
+            "category_id": 1,
+            "category": "scifi",
+            "subcategory": "drama"
+        },
+        {
+            "id": 10,
+            "name": "Incredible Cotton Mouse",
+            "description": "Incredible Cotton Mouse and something ",
+            "category": "fantasy",
+            "subcategory": "drama"
+        }
+    ]
+}
