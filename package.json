@@ -1,0 +1,14 @@
+{
+  "name": "m2t_testtask",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install-dependencies": "npm run install-server && npm run install-client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
