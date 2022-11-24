@@ -15,27 +15,27 @@ const SECRET_KEY = '123456789'
 
 const expiresIn = '1h'
 
-// Create a token from a payload 
+// Payloaddan token oluşturuldu
 function createToken(payload) {
     return jwt.sign(payload, SECRET_KEY, { expiresIn })
 }
 
-// Verify the token 
+// Token Doğrulama
 function verifyToken(token) {
     return jwt.verify(token, SECRET_KEY, (err, decode) => decode !== undefined ? decode : err)
 }
 
-// Check if the user exists in database
+// Kullanıcı giriş yaptı mı
 function isLoginAuthenticated({username, password  }) {
     return userdb.users.findIndex(user => user.username === username && user.password === password ) !== -1
 }
-
+// Kullancı veritabanında var mı?
 function isRegisterAuthenticated({username, email, password  }) {
     return userdb.users.findIndex(user => user.username === username && user.email === email && user.password === password ) !== -1
 }
 
 
-// Register New User
+// Yeni kullanıcı kayıt
 server.post('/auth/register', (req, res) => {
     console.log("register endpoint called; request body:");
     console.log(req.body);
@@ -56,15 +56,15 @@ server.post('/auth/register', (req, res) => {
             return
         };
 
-        // Get current users data
+        // Var olan kullanıcıların verilerini al
         var data = JSON.parse(data.toString());
 
-        // Get the id of last user
+        // Son kullanıcının id değerini al
         var last_item_id = data.users[data.users.length - 1].id;
 
-        //Add new user
-        data.users.push({ id: last_item_id + 1, email: email, password: password, username: username }); //add some data
-        var writeData = fs.writeFile("./users.json", JSON.stringify(data), (err, result) => {  // WRITE
+        // Yeni kullanıcı ekle
+        data.users.push({ id: last_item_id + 1, email: email, password: password, username: username }); //değer ekle
+        var writeData = fs.writeFile("./users.json", JSON.stringify(data), (err, result) => {  // Üzerine yaz
             if (err) {
                 const status = 401
                 const message = err
@@ -74,13 +74,13 @@ server.post('/auth/register', (req, res) => {
         });
     });
 
-    // Create token for new user
+    // Yeni kullanıcı için token oluştur
     const access_token = createToken({ email, password, username })
     console.log("Access Token:" + access_token);
     res.status(200).json({ access_token })
 })
 
-// Login to one of the users from ./users.json
+// users.json klsaöründeki kullanıcıların biri ile giriş yap
 server.post('/auth/login', (req, res) => {
     console.log("login endpoint called; request body:");
     console.log(req.body);
